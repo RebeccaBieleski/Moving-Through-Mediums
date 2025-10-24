@@ -3,22 +3,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractionPointer : MonoBehaviour
 {
+    private Character _currentCharacter;
     private InputAction _inputAction;
     private GameObject _currentInteractable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _currentCharacter = GetComponentInParent<Character>();
         _inputAction = InputSystem.actions.FindAction("Attack");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_inputAction.triggered && _currentInteractable != null)
-        {
-            _currentInteractable.GetComponent<IInteractable>().Interact(Vector2.right); // todo
-        }
+        UpdatePosition();
+        Interact();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,5 +31,18 @@ public class PlayerInteractionPointer : MonoBehaviour
     {
         if (other.gameObject == _currentInteractable)
             _currentInteractable = null;
+    }
+
+    private void UpdatePosition()
+    {
+        gameObject.transform.localPosition = _currentCharacter.Facing == Direction.LEFT ? Vector3.left : Vector3.right;
+    }
+
+    private void Interact()
+    {
+        if (_inputAction.triggered && _currentInteractable != null)
+        {
+            _currentInteractable.GetComponent<IInteractable>().Interact(_currentCharacter);
+        }
     }
 }
