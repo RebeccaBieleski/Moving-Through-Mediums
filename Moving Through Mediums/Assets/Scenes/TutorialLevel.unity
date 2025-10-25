@@ -572,7 +572,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: UnderControl
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_Name
+      value: Unpossess Input
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 9dca17b0-69cf-44ec-a776-e99f342f354b
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/rightButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Unpossess Input
       objectReference: {fileID: 0}
     - target: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Name
@@ -581,7 +601,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1253984601}
   m_SourcePrefab: {fileID: 100100000, guid: 3da12409299d73749871523c5f0032f2, type: 3}
 --- !u!1001 &79529710
 PrefabInstance:
@@ -5610,6 +5633,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableCube
       objectReference: {fileID: 0}
+    - target: {fileID: 6004253602991360478, guid: 78ad436c3a4276d45b6e3c219fe41b71, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 593615302017100576, guid: f1d6fbaa9c0607c44a0d31a255ee3aab, type: 3}
     - target: {fileID: 6559577914537391279, guid: 78ad436c3a4276d45b6e3c219fe41b71, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.01
@@ -6084,6 +6111,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 64811106369376966, guid: 3476fab7ef7eeab4a91597dadc005b28, type: 3}
   m_PrefabInstance: {fileID: 1252959768}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1253984593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+  m_PrefabInstance: {fileID: 77588656}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1253984601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253984593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c8d690294d68648a8b7dd7123a6833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableCharacter
 --- !u!1001 &1268947028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10642,7 +10686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440066013694261076, guid: 2b179bf63dc7d5c49bcb195d56528108, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.048309326
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: 440066013694261076, guid: 2b179bf63dc7d5c49bcb195d56528108, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10675,10 +10719,6 @@ PrefabInstance:
     - target: {fileID: 4730407454838447020, guid: 2b179bf63dc7d5c49bcb195d56528108, type: 3}
       propertyPath: m_Name
       value: Ghost
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736368712647001674, guid: 2b179bf63dc7d5c49bcb195d56528108, type: 3}
-      propertyPath: UnderControl
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -15,17 +15,28 @@ public class GhostController : MonoBehaviour
     [SerializeField]
     public bool UnderControl = true;
 
+    [SerializeField]
+    private MeshRenderer GhostRenderer;
+
+    [SerializeField]
+    private InputAction UnpossessInputAction;
+
+    [SerializeField]
+    private CapsuleCollider Collider;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _moveInput = InputSystem.actions.FindAction("Move");
-        _rigidBody = GetComponent<Rigidbody>();
-    }
+        _rigidBody = GetComponent<Rigidbody>();        
 
-    private void Update()
-    {
-    }
 
+        UnpossessInputAction.performed += cty => {
+            Possess(null);
+        };
+        UnpossessInputAction.Disable();
+    }
+    
     private void FixedUpdate()
     {
         if (UnderControl) {		
@@ -54,12 +65,26 @@ public class GhostController : MonoBehaviour
             return;
 
        
-        _character.UpdateFacing(xMovementCommand < 0 ? Direction.LEFT : Direction.RIGHT);
     }
 
-    public void Possess ()
+    public void Possess (PlayerController character)
 	{
         UnderControl = !UnderControl;
-
+        if (!UnderControl) {
+            //Disappear Ghost
+            GhostRenderer.transform.gameObject.SetActive(false);
+            this.gameObject.transform.parent = character.transform;
+            UnpossessInputAction.Enable();
+            Collider.enabled = false;
+            _rigidBody.isKinematic = true;
+        } else {
+            //Reappear Ghost
+            GhostRenderer.transform.gameObject.SetActive(true);
+            this.gameObject.transform.parent = null;
+            UnpossessInputAction.Disable();
+            Collider.enabled = true;
+            _rigidBody.isKinematic = false;
+        }
     }
+
 }

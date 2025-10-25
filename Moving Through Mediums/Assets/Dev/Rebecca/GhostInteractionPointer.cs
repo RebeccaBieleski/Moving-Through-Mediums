@@ -4,43 +4,52 @@ using UnityEngine.InputSystem;
 public class GhostInteractionPointer : MonoBehaviour
 {
     [SerializeField]
-    private GhostController GhostCharacter;
+    private GhostController GhostCharacter;    
     [SerializeField]
-    private InputAction PossessInputAction;
-    private PlayerController _currentInteractable;
+    private PlayerController currentMousedOverCharacter;
 
     [SerializeField]
-    private float possessionDistance = 5;
+    private float possessionDistance = 50;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (GhostCharacter.UnderControl)
-        CheckPossessionInput();
+    [SerializeField]
+    private InputAction PossessInputAction;    
+
+    private void Awake()
+	{
+        PossessInputAction.performed += ctx => {
+                Vector3 coor = Mouse.current.position.ReadValue();
+                foreach (var hit in Physics.RaycastAll(Camera.main.ScreenPointToRay(coor))) {
+                    currentMousedOverCharacter = hit.collider.GetComponent<PlayerController>();
+                    if (currentMousedOverCharacter != null) {
+                    CheckPossessionInput();
+                    break;
+                    }
+                }
+            };
+        PossessInputAction.Enable();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerController>())
-            _currentInteractable = other.gameObject.GetComponent<PlayerController>();
-        else
-            _currentInteractable = null;
+            currentMousedOverCharacter = other.gameObject.GetComponent<PlayerController>();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == _currentInteractable)
-            _currentInteractable = null;
+        if (other.gameObject == currentMousedOverCharacter)
+            currentMousedOverCharacter = null;
     }
 
     private void CheckPossessionInput()
     {
-        if (PossessInputAction.WasReleasedThisFrame() && _currentInteractable != null) {
-            //Check if target is in range
-            if (Vector3.Distance(GhostCharacter.transform.position, _currentInteractable.transform.position) < possessionDistance){
-                _currentInteractable.Possess();
-                GhostCharacter.Possess();
-            }            
+        if (GhostCharacter.UnderControl) {
+                //Check if target is in range
+            if (Vector3.Distance(GhostCharacter.transform.position, currentMousedOverCharacter.transform.position) < possessionDistance) {
+                currentMousedOverCharacter.Possess();
+                GhostCharacter.Possess(currentMousedOverCharacter);
+            }
+            
         }
     }
 }

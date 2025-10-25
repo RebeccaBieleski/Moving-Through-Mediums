@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class InteractableCharacter : MonoBehaviour, IInteractable
+public class InteractableCharacter : MouseClicks, IInteractable
 {
 
 	PlayerController attachedCharacter;

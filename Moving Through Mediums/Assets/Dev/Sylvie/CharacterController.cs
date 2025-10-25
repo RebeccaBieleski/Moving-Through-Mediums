@@ -13,7 +13,13 @@ public class PlayerController : MonoBehaviour
     private Character _character;
 
     [SerializeField]
+    private GhostController GhostPrefab;
+
+    [SerializeField]
     private bool UnderControl = false;
+
+    [SerializeField]
+    private InputAction UnpossessInputAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,6 +28,11 @@ public class PlayerController : MonoBehaviour
         _jumpInput = InputSystem.actions.FindAction("Jump");
         _rigidBody = GetComponent<Rigidbody>();
         _character = GetComponent<Character>();
+
+        UnpossessInputAction.performed += ctx => {
+            Possess();
+        };
+        UnpossessInputAction.Disable();
     }
 
     private void Update()
@@ -71,6 +82,10 @@ public class PlayerController : MonoBehaviour
     public void Possess ()
 	{
         UnderControl = !UnderControl;
-
+        if (UnderControl) {
+            UnpossessInputAction.Enable();
+        } else {
+            UnpossessInputAction.Disable();
+        }
     }
 }
