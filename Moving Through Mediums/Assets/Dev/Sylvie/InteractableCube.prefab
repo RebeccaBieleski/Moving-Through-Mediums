@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1320468821450177356}
   - component: {fileID: 6285197378397033655}
   - component: {fileID: 3782733221519763974}
-  - component: {fileID: 1239027110691073958}
+  - component: {fileID: 8312342689814945016}
   m_Layer: 0
   m_Name: InteractableCube
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &1239027110691073958
+--- !u!114 &8312342689814945016
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443105946346732647}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667c2ab54ace56c48bea12137f244f97, type: 3}
+  m_Script: {fileID: 11500000, guid: 71f16f2ecc2d94e41afc1905c2da7d24, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  _isUnderTelekinesis: 0
+  m_EditorClassIdentifier: Assembly-CSharp::ClickableCube
+  CubeType: 0
+  _isBeingControlled: 0
+  _cubeControlRange: {fileID: 0}

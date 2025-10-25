@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteractionPointer : MonoBehaviour
+public class PlayerInteractionRange : MonoBehaviour
 {
     private Character _currentCharacter;
     private InputAction _inputAction;
@@ -17,7 +17,6 @@ public class PlayerInteractionPointer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();
         Interact();
     }
 
@@ -31,11 +30,6 @@ public class PlayerInteractionPointer : MonoBehaviour
     {
         if (other.gameObject == _currentInteractable)
             _currentInteractable = null;
-    }
-
-    private void UpdatePosition()
-    {
-        transform.localPosition = _currentCharacter.Facing == Direction.LEFT ? Vector3.left : Vector3.right;
     }
 
     private void Interact()

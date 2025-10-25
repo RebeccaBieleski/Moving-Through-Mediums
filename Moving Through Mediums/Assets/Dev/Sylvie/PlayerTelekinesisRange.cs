@@ -1,5 +1,5 @@
 using UnityEngine;
 
-public class PlayerTelekinesisPointer : MonoBehaviour
+public class PlayerTelekinesisRange : MonoBehaviour
 {
 }
