@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9018638422992199328}
   - component: {fileID: 7590306759579039190}
   - component: {fileID: 6299919793810215276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8736368712647001674}
   - component: {fileID: 2216650598967792690}
   - component: {fileID: 2242967834853328714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 8378628231498332199}
   - component: {fileID: 1514626554879309961}
   - component: {fileID: 7502989380738015602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: er
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 2267630300229776360}
   - component: {fileID: 7687657666383585935}
   - component: {fileID: 8741889364475708990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: er (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

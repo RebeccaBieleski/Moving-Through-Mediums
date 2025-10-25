@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9018638422992199328}
   - component: {fileID: 7590306759579039190}
   - component: {fileID: 7240112369271594854}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PickupRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 6009245636018126400}
   - component: {fileID: 2359951573086748486}
   - component: {fileID: 2893011861981966694}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TelekinesisRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7245088884232602267}
   - component: {fileID: 3799059988328517798}
   - component: {fileID: 7333486220157719781}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,5 +306,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2d587f06bfa3840a286281809f888c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _heightWhenHeld: 1.5
   Facing: 0
