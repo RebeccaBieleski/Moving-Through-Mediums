@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_Name
+      value: Unpossess Input
+      objectReference: {fileID: 0}
     - target: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Name
       value: SurvivorCharacter
@@ -59,6 +63,10 @@ PrefabInstance:
     - target: {fileID: 7333486220157719781, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: CanUseTelekinesis
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164373649484527663, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

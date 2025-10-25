@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1775841932315758303, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -356519553, guid: a85512c9e57155f4abf440b6d193cdcc, type: 3}
     - target: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Name
       value: MediumCharacter
@@ -63,6 +67,18 @@ PrefabInstance:
     - target: {fileID: 7333486220157719781, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: CanUseTelekinesis
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894648734599952008, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164373649484527663, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 9164373649484527663, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
