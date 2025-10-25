@@ -34,18 +34,18 @@ public class Character : MonoBehaviour
         {
             _heldBox = box;
             _heldBox.DisablePhysics();
-            _heldBox.gameObject.transform.parent = this.gameObject.transform;
-            _heldBox.gameObject.transform.localPosition = new Vector3(0, _heightWhenHeld, 0);
+            _heldBox.transform.parent = this.transform;
+            _heldBox.transform.localPosition = new Vector3(0, _heightWhenHeld, 0);
         }));
     }
 
     public void ReleaseBox()
     {
         var xDisplacement = Facing == Direction.LEFT ? -1 : 1;
-        _heldBox.gameObject.transform.localPosition = new Vector3(xDisplacement, _heightWhenHeld);
+        _heldBox.transform.localPosition = new Vector3(xDisplacement, _heightWhenHeld);
 
         _heldBox.EnablePhysics();
-        _heldBox.gameObject.transform.parent = null;
+        _heldBox.transform.parent = null;
         _heldBox = null;
     }
 

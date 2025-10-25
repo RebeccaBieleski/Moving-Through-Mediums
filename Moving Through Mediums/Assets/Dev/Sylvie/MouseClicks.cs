@@ -10,7 +10,7 @@ public class MouseClicks : MonoBehaviour
         click = new InputAction(binding: "<Mouse>/leftButton");
         click.performed += ctx => {
             Vector3 coor = Mouse.current.position.ReadValue();
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(coor), out RaycastHit hit))
+            foreach (var hit in Physics.RaycastAll(Camera.main.ScreenPointToRay(coor)))
             {
                 hit.collider.GetComponent<IClickable>()?.OnClick();
             }

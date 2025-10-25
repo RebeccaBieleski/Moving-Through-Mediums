@@ -35,7 +35,7 @@ public class PlayerInteractionPointer : MonoBehaviour
 
     private void UpdatePosition()
     {
-        gameObject.transform.localPosition = _currentCharacter.Facing == Direction.LEFT ? Vector3.left : Vector3.right;
+        transform.localPosition = _currentCharacter.Facing == Direction.LEFT ? Vector3.left : Vector3.right;
     }
 
     private void Interact()
