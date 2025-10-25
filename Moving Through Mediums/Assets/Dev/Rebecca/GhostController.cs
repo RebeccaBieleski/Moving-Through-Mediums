@@ -55,7 +55,7 @@ public class GhostController : MonoBehaviour
         _character.UpdateFacing(xMovementCommand < 0 ? Direction.LEFT : Direction.RIGHT);
     }
 
-    private void Possess ()
+    public void Possess ()
 	{
         UnderControl = !UnderControl;
 

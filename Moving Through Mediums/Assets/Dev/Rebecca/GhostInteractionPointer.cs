@@ -3,28 +3,24 @@ using UnityEngine.InputSystem;
 
 public class GhostInteractionPointer : MonoBehaviour
 {
-    private Ghost _currentCharacter;
-    private InputAction _inputAction;
-    private GameObject _currentInteractable;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        _currentCharacter = GetComponentInParent<Character>();
-        _inputAction = InputSystem.actions.FindAction("Attack");
-    }
+    [SerializeField]
+    private GhostController GhostCharacter;
+    [SerializeField]
+    private InputAction PossessInputAction;
+    private PlayerController _currentInteractable;
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();
-        Interact();
+        CheckPossessionInput();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<IInteractable>() != null)
-            _currentInteractable = other.gameObject;
+        if (other.gameObject.GetComponent<IInteractable>() != null && other.gameObject.GetComponent<PlayerController>())
+            _currentInteractable = other.gameObject.GetComponent<PlayerController>();
+        else
+            _currentInteractable = null;
     }
 
     private void OnTriggerExit(Collider other)
@@ -33,15 +29,12 @@ public class GhostInteractionPointer : MonoBehaviour
             _currentInteractable = null;
     }
 
-    private void UpdatePosition()
-    {
-        gameObject.transform.localPosition = _currentCharacter.Facing == Direction.LEFT ? Vector3.left : Vector3.right;
-    }
 
-    private void Interact()
+    private void CheckPossessionInput()
     {
-        if (_inputAction.WasReleasedThisFrame() && _currentInteractable != null) {
-            _currentInteractable.GetComponent<IInteractable>().Interact(_currentCharacter);
+        if (PossessInputAction.WasReleasedThisFrame() && _currentInteractable != null) {
+            _currentInteractable.Possess();
+            GhostCharacter.Possess();
         }
     }
 }
