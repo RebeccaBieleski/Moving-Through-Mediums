@@ -293,7 +293,7 @@ MonoBehaviour:
   MoveSpeed: 60
   JumpForce: 14
   HorizontalDragFactor: 0.9
-  UnderControl: 1
+  UnderControl: 0
 --- !u!114 &7333486220157719781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,3 +307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Facing: 0
+  CanUseTelekinesis: 1
+  CanUseLever: 1
+  CanMoveHeavy: 1

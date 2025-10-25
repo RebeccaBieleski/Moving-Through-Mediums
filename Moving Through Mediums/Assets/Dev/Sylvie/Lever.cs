@@ -7,6 +7,9 @@ public class Lever : MonoBehaviour, IInteractable
 
     public void Interact(Character interactingCharacter)
     {
+        if (!interactingCharacter.CanUseLever)
+            return;
+
         foreach (var toggleable in ConnectedObjects)
         {
             toggleable.GetComponent<IToggleable>()?.Toggle();

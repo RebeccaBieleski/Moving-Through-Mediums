@@ -63,7 +63,7 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<PlayerInteractionRange>() != null)
+        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<PlayerInteractionRange>() != null && other.gameObject.GetComponentInParent<Character>().CanMoveHeavy)
             || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<PlayerTelekinesisRange>() != null))
         {
             _cubeControlRange = other;

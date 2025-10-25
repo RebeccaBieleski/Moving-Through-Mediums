@@ -5,6 +5,8 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     [SerializeField] public Direction Facing;
+    [SerializeField] public bool CanUseLever;
+    [SerializeField] public bool CanMoveHeavy;
 
     public void UpdateFacing(Direction direction)
     {
