@@ -3,7 +3,12 @@ guid: f1d6fbaa9c0607c44a0d31a255ee3aab
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: environment_sprites
+    second: {fileID: 2100000, guid: f1859d3a377767c45ba5b186350b351f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
