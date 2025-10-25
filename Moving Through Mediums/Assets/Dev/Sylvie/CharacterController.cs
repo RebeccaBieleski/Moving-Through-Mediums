@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidBody;
     private Character _character;
 
+    [SerializeField]
     private bool UnderControl = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
