@@ -293,7 +293,7 @@ MonoBehaviour:
   MoveSpeed: 60
   JumpForce: 14
   HorizontalDragFactor: 0.9
-  UnderControl: 0
+  UnderControl: 1
 --- !u!114 &7333486220157719781
 MonoBehaviour:
   m_ObjectHideFlags: 0
