@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteractionPointer : MonoBehaviour
 {
+    [SerializeField]
     private Character _currentCharacter;
     private InputAction _inputAction;
     private GameObject _currentInteractable;
@@ -10,7 +11,6 @@ public class PlayerInteractionPointer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _currentCharacter = GetComponentInParent<Character>();
         _inputAction = InputSystem.actions.FindAction("Attack");
     }
 

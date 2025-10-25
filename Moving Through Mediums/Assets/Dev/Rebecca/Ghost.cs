@@ -4,20 +4,22 @@ using UnityEngine.InputSystem;
 public class Ghost : MonoBehaviour
 {
 
-    private InputAction InputPossess;
+    [SerializeField]
+    private InputAction UnpossessInput;
 
     private bool PossessingCurrently;
 
     private Character PosessedCharacter;
 
+    [SerializeField] public Direction Facing;
+
     private void Start()
     {
-        InputPossess = InputSystem.actions.FindAction("Possess");
     }
 
     private void Update()
     {
-        if (InputPossess.WasReleasedThisFrame() && PosessedCharacter != null) {
+        if (UnpossessInput.WasReleasedThisFrame() && PosessedCharacter != null) {
             Unpossess();
 		}
     }
@@ -26,6 +28,11 @@ public class Ghost : MonoBehaviour
 	{
 
 	}
+
+    public void UpdateFacing(Direction direction)
+    {
+        Facing = direction;
+    }
 
     private void Unpossess()
 	{

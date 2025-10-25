@@ -9,15 +9,19 @@ public class GhostInteractionPointer : MonoBehaviour
     private InputAction PossessInputAction;
     private PlayerController _currentInteractable;
 
+    [SerializeField]
+    private float possessionDistance = 5;
+
     // Update is called once per frame
     void Update()
     {
+        if (GhostCharacter.UnderControl)
         CheckPossessionInput();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<IInteractable>() != null && other.gameObject.GetComponent<PlayerController>())
+        if (other.gameObject.GetComponent<PlayerController>())
             _currentInteractable = other.gameObject.GetComponent<PlayerController>();
         else
             _currentInteractable = null;
@@ -29,12 +33,14 @@ public class GhostInteractionPointer : MonoBehaviour
             _currentInteractable = null;
     }
 
-
     private void CheckPossessionInput()
     {
         if (PossessInputAction.WasReleasedThisFrame() && _currentInteractable != null) {
-            _currentInteractable.Possess();
-            GhostCharacter.Possess();
+            //Check if target is in range
+            if (Vector3.Distance(GhostCharacter.transform.position, _currentInteractable.transform.position) < possessionDistance){
+                _currentInteractable.Possess();
+                GhostCharacter.Possess();
+            }            
         }
     }
 }

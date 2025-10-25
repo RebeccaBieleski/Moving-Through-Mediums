@@ -9,16 +9,17 @@ public class GhostController : MonoBehaviour
     private InputAction _moveInput;
     private InputAction _jumpInput;
     private Rigidbody _rigidBody;
-    private Character _character;
+    [SerializeField]
+    private Ghost _character;
 
-    private bool UnderControl = true;
+    [SerializeField]
+    public bool UnderControl = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _moveInput = InputSystem.actions.FindAction("Move");
         _rigidBody = GetComponent<Rigidbody>();
-        _character = GetComponent<Character>();
     }
 
     private void Update()
@@ -52,6 +53,7 @@ public class GhostController : MonoBehaviour
         if (xMovementCommand == 0)
             return;
 
+       
         _character.UpdateFacing(xMovementCommand < 0 ? Direction.LEFT : Direction.RIGHT);
     }
 

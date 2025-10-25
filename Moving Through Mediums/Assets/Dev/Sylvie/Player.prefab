@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a684e646f7083f428accb4961e181e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _currentCharacter: {fileID: 7333486220157719781}
 --- !u!1 &4105812957877405160
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +293,7 @@ MonoBehaviour:
   MoveSpeed: 60
   JumpForce: 14
   HorizontalDragFactor: 0.9
+  UnderControl: 0
 --- !u!114 &7333486220157719781
 MonoBehaviour:
   m_ObjectHideFlags: 0

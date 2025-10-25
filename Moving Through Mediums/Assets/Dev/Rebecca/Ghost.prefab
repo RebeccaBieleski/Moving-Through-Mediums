@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9018638422992199328}
   - component: {fileID: 7590306759579039190}
-  - component: {fileID: 7240112369271594854}
+  - component: {fileID: 6299919793810215276}
   m_Layer: 0
   m_Name: Pointer
   m_TagString: Untagged
@@ -54,7 +54,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7240112369271594854
+--- !u!114 &6299919793810215276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,9 +63,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 3329840404795252980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a684e646f7083f428accb4961e181e6, type: 3}
+  m_Script: {fileID: 11500000, guid: c460f9451ed9a254a82e1bae313ac27e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::GhostInteractionPointer
+  GhostCharacter: {fileID: 8736368712647001674}
+  PossessInputAction:
+    m_Name: Possess Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 35648d6b-7bfd-4519-a938-a7c3e92186c8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0c29cf98-758a-4ac5-97ce-b3c176bac581
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Possess Input
+      m_Flags: 0
+    m_Flags: 0
+  possessionDistance: 5
 --- !u!1 &4730407454838447020
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +99,8 @@ GameObject:
   - component: {fileID: 7250197199674330841}
   - component: {fileID: 7245088884232602267}
   - component: {fileID: 8736368712647001674}
-  - component: {fileID: 7333486220157719781}
+  - component: {fileID: 2216650598967792690}
+  - component: {fileID: 2242967834853328714}
   m_Layer: 0
   m_Name: Ghost
   m_TagString: Untagged
@@ -226,7 +246,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GhostController
   MoveSpeed: 60
   DragFactor: 0.9
---- !u!114 &7333486220157719781
+  _character: {fileID: 2216650598967792690}
+  UnderControl: 1
+--- !u!114 &2216650598967792690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,11 +257,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 4730407454838447020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e2d587f06bfa3840a286281809f888c, type: 3}
+  m_Script: {fileID: 11500000, guid: b649b74277b269840875bd25d1794cd8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  _heightWhenHeld: 1.5
+  m_EditorClassIdentifier: Assembly-CSharp::Ghost
+  UnpossessInput:
+    m_Name: Unpossess Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5e00c1cd-a24a-47d0-a631-3d0880cbf9c0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 49bfe686-96de-4926-8ed6-0b8fa4cab158
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Unpossess Input
+      m_Flags: 0
+    m_Flags: 0
   Facing: 0
+--- !u!114 &2242967834853328714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4730407454838447020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c460f9451ed9a254a82e1bae313ac27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GhostInteractionPointer
+  GhostCharacter: {fileID: 8736368712647001674}
+  PossessInputAction:
+    m_Name: Possess Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6aa2ed8c-a324-4b13-b712-ec8cbb250339
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0bf8cbc1-35e6-4b33-999c-c8e3e6e6d1d1
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Possess Input
+      m_Flags: 0
+    m_Flags: 0
+  possessionDistance: 5
 --- !u!1 &6205867673475606109
 GameObject:
   m_ObjectHideFlags: 0
