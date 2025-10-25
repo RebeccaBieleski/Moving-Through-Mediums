@@ -11,7 +11,7 @@ public class GhostController : MonoBehaviour
     private Rigidbody _rigidBody;
     private Character _character;
 
-    private bool UnderControl = false;
+    private bool UnderControl = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
