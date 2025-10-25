@@ -19,9 +19,9 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (_inputAction.triggered && _heldBox != null)
+        if (_inputAction.WasReleasedThisFrame() && _heldBox != null)
         {
-            StartCoroutine(DoDelayed(() => ReleaseBox()));
+            ReleaseBox();
         }
     }
 
@@ -30,10 +30,13 @@ public class Character : MonoBehaviour
         if (_heldBox != null)
             return;
 
-        _heldBox = box;
-        _heldBox.DisablePhysics();
-        _heldBox.gameObject.transform.parent = this.gameObject.transform;
-        _heldBox.gameObject.transform.localPosition = new Vector3(0, _heightWhenHeld, 0);
+        StartCoroutine(DoDelayed(() =>
+        {
+            _heldBox = box;
+            _heldBox.DisablePhysics();
+            _heldBox.gameObject.transform.parent = this.gameObject.transform;
+            _heldBox.gameObject.transform.localPosition = new Vector3(0, _heightWhenHeld, 0);
+        }));
     }
 
     public void ReleaseBox()

@@ -40,7 +40,7 @@ public class PlayerInteractionPointer : MonoBehaviour
 
     private void Interact()
     {
-        if (_inputAction.triggered && _currentInteractable != null)
+        if (_inputAction.WasReleasedThisFrame() && _currentInteractable != null)
         {
             _currentInteractable.GetComponent<IInteractable>().Interact(_currentCharacter);
         }
