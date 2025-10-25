@@ -1,11 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Lever : MonoBehaviour, IInteractable
 {
-    public Direction Direction = Direction.UP;
+    [SerializeField] List<GameObject> ConnectedObjects = new();
 
     public void Interact(Character interactingCharacter)
     {
-        Direction = Direction == Direction.UP ? Direction.DOWN : Direction.UP;
+        foreach (var toggleable in ConnectedObjects)
+        {
+            toggleable.GetComponent<IToggleable>()?.Toggle();
+        }
     }
 }
