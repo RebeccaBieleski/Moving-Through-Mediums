@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInteractionRange : MonoBehaviour
+public class CharacterInteractionRange : MonoBehaviour
 {
     [SerializeField]
     private Character _currentCharacter;

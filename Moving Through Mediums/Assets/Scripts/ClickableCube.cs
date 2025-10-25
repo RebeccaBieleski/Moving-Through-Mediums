@@ -63,8 +63,8 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<PlayerInteractionRange>() != null && other.gameObject.GetComponentInParent<Character>().CanMoveHeavy)
-            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<PlayerTelekinesisRange>() != null))
+        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<CharacterInteractionRange>() != null && other.gameObject.GetComponentInParent<Character>().CanMoveHeavy)
+            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<CharacterTelekinesisRange>() != null))
         {
             _cubeControlRange = other;
         }
@@ -72,8 +72,8 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private void OnTriggerExit(Collider other)
     {
-        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<PlayerInteractionRange>() != null)
-            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<PlayerTelekinesisRange>() != null))
+        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<CharacterInteractionRange>() != null)
+            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<CharacterTelekinesisRange>() != null))
         {
             _cubeControlRange = null;
         }
