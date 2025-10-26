@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,12 +15,13 @@ public class PlayerController : MonoBehaviour
     private InputAction _downInput;
     private Rigidbody _rigidBody;
     private Character _character;
+    private List<Collider> _childColliders;
 
     [SerializeField]
     private GhostController GhostPrefab;
 
     [SerializeField]
-    private bool UnderControl = false;
+    public bool UnderControl = false;
 
     [SerializeField]
     private InputAction UnpossessInputAction;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
         _downInput = InputSystem.actions.FindAction("Down");
         _rigidBody = GetComponent<Rigidbody>();
         _character = GetComponent<Character>();
+        _childColliders = GetComponentsInChildren<Collider>(includeInactive: true).Where(c => c.transform != this.transform).ToList();
 
         UnpossessInputAction.performed += ctx => Possess();
         UnpossessInputAction.Disable();
@@ -100,10 +104,14 @@ public class PlayerController : MonoBehaviour
         if (UnderControl) 
         {
             UnpossessInputAction.Enable();
+            foreach (var childCollider in _childColliders)
+                childCollider.enabled = true;
         } 
         else 
         {
             UnpossessInputAction.Disable();
+            foreach (var childCollider in _childColliders)
+                childCollider.enabled = false;
         }
     }
 }
