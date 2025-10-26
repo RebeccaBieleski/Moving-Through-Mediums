@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3562200327299083578
+--- !u!1 &3587514459333353172
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9136260519590466788}
-  - component: {fileID: 1687373107062122444}
-  - component: {fileID: 3690724865615302273}
+  - component: {fileID: 3415620667436177902}
+  - component: {fileID: 35146452043030950}
+  - component: {fileID: 1700330326318475544}
   m_Layer: 0
   m_Name: floor.L
   m_TagString: Untagged
@@ -18,36 +18,46 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9136260519590466788
+--- !u!4 &3415620667436177902
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3562200327299083578}
+  m_GameObject: {fileID: 3587514459333353172}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: -0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+=======
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 1, z: 1}
+>>>>>>> rika-art
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 180}
 --- !u!33 &1687373107062122444
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &35146452043030950
+>>>>>>> rika-art
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3562200327299083578}
+  m_GameObject: {fileID: 3587514459333353172}
   m_Mesh: {fileID: -7157126247783381119, guid: d81835037ec33dc478455772579754c7, type: 3}
---- !u!23 &3690724865615302273
+--- !u!23 &1700330326318475544
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3562200327299083578}
+  m_GameObject: {fileID: 3587514459333353172}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
