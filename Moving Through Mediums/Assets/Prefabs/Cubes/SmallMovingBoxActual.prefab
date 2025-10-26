@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1379793300147289040}
   - component: {fileID: 1260141079696797591}
   m_Layer: 0
-  m_Name: SmallMovingBox
+  m_Name: SmallMovingBoxActual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
