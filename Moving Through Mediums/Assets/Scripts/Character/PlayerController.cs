@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     private InputAction _moveInput;
     private InputAction _jumpInput;
+    private InputAction _upInput;
+    private InputAction _downInput;
     private Rigidbody _rigidBody;
     private Character _character;
 
@@ -26,33 +28,34 @@ public class PlayerController : MonoBehaviour
     {
         _moveInput = InputSystem.actions.FindAction("Move");
         _jumpInput = InputSystem.actions.FindAction("Jump");
+        _upInput = InputSystem.actions.FindAction("Up");
+        _downInput = InputSystem.actions.FindAction("Down");
         _rigidBody = GetComponent<Rigidbody>();
         _character = GetComponent<Character>();
 
-        UnpossessInputAction.performed += ctx => {
-            Possess();
-        };
+        UnpossessInputAction.performed += ctx => Possess();
         UnpossessInputAction.Disable();
     }
 
     private void Update()
     {
         if (UnderControl)
-        Jump();
+        {
+            Jump();
+            EnterEntrance();
+        }
     }
 
     private void FixedUpdate()
     {
-
-        if (UnderControl) {
-
+        if (UnderControl) 
+        {
             Move();
             UpdateFacing();
 
             _rigidBody.linearVelocity = new Vector3(HorizontalDragFactor * _rigidBody.linearVelocity.x,
                 _rigidBody.linearVelocity.y,
                 _rigidBody.linearVelocity.z);
-
         }
     }
 
@@ -70,6 +73,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void EnterEntrance()
+    {
+        if (_upInput.WasReleasedThisFrame())
+        {
+            _character.UseEntrance(Direction.UP);
+        }
+        else if (_downInput.WasReleasedThisFrame())
+        {
+            _character.UseEntrance(Direction.DOWN);
+        }
+    }
+
     private void UpdateFacing()
     {
         var xMovementCommand = _moveInput.ReadValue<Vector2>().x;
@@ -79,12 +94,15 @@ public class PlayerController : MonoBehaviour
         _character.UpdateFacing(xMovementCommand < 0 ? Direction.LEFT : Direction.RIGHT);
     }
 
-    public void Possess ()
+    public void Possess()
 	{
         UnderControl = !UnderControl;
-        if (UnderControl) {
+        if (UnderControl) 
+        {
             UnpossessInputAction.Enable();
-        } else {
+        } 
+        else 
+        {
             UnpossessInputAction.Disable();
         }
     }
