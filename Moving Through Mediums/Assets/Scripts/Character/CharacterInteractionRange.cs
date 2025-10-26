@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CharacterInteractionRange : MonoBehaviour
+public class CharacterInteractionRange : MonoBehaviour, IInteractionRange
 {
     [SerializeField]
     private Character _currentCharacter;
+    [SerializeField] Collider _collider;
     private InputAction _inputAction;
     private GameObject _currentInteractable;
 
@@ -19,6 +20,8 @@ public class CharacterInteractionRange : MonoBehaviour
     {
         Interact();
     }
+
+    public void SetColliderActive(bool enable) => _collider.enabled = enable;
 
     private void OnTriggerEnter(Collider other)
     {

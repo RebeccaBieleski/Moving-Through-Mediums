@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
+    [SerializeField] CharacterFeet Feet;
+
     [SerializeField] public Direction Facing;
     [SerializeField] public bool CanUseLever;
     [SerializeField] public bool CanMoveHeavy;
@@ -28,6 +30,18 @@ public class Character : MonoBehaviour
                 _currentEntrance.MoveDown(this);
             }
         } 
+    }
+    public void StickFeetToBox()
+    {
+        if (Feet.CubeUnderFeet != null)
+        {
+            transform.parent = Feet.CubeUnderFeet.transform;
+        }
+    }
+
+    public void UnstickFeet()
+    {
+        transform.parent = null;
     }
 
     private void OnTriggerEnter(Collider other)

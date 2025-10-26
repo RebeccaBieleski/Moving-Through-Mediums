@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private InputAction _downInput;
     private Rigidbody _rigidBody;
     private Character _character;
-    private List<Collider> _childColliders;
+    private List<IInteractionRange> _childInteractionRanges;
 
     [SerializeField]
     private GhostController GhostPrefab;
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         _downInput = InputSystem.actions.FindAction("Down");
         _rigidBody = GetComponent<Rigidbody>();
         _character = GetComponent<Character>();
-        _childColliders = GetComponentsInChildren<Collider>(includeInactive: true).Where(c => c.transform != this.transform).ToList();
+        _childInteractionRanges = GetComponentsInChildren<IInteractionRange>().ToList();
 
         UnpossessInputAction.performed += ctx => Possess();
         UnpossessInputAction.Disable();
@@ -104,14 +104,16 @@ public class PlayerController : MonoBehaviour
         if (UnderControl) 
         {
             UnpossessInputAction.Enable();
-            foreach (var childCollider in _childColliders)
-                childCollider.enabled = true;
+            _character.UnstickFeet();
+            foreach (var r in _childInteractionRanges)
+                r.SetColliderActive(true);
         } 
         else 
         {
             UnpossessInputAction.Disable();
-            foreach (var childCollider in _childColliders)
-                childCollider.enabled = false;
+            _character.StickFeetToBox();
+            foreach (var r in _childInteractionRanges)
+                r.SetColliderActive(false);
         }
     }
 }

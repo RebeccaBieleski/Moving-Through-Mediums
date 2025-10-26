@@ -1,5 +1,75 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &711196485258631602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3494286723873798283}
+  - component: {fileID: 9123880939317151684}
+  - component: {fileID: 41077424597099704}
+  m_Layer: 7
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3494286723873798283
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711196485258631602}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 440066013694261076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1.011}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &9123880939317151684
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711196485258631602}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.01, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &41077424597099704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711196485258631602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fec13908be0d5b46936489a391ef7fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1487072664995956699
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterInteractionRange
   _currentCharacter: {fileID: 7333486220157719781}
+  _collider: {fileID: 7590306759579039190}
 --- !u!1 &4105812957877405160
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17108866c7b93064db5501e88fdf0148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _collider: {fileID: 2359951573086748486}
 --- !u!1 &4730407454838447020
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +360,7 @@ RectTransform:
   - {fileID: 9018638422992199328}
   - {fileID: 6009245636018126400}
   - {fileID: 9164373649484527663}
+  - {fileID: 3494286723873798283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -447,6 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2d587f06bfa3840a286281809f888c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Feet: {fileID: 41077424597099704}
   Facing: 0
   CanUseLever: 1
   CanMoveHeavy: 1
