@@ -8,9 +8,38 @@ public class Character : MonoBehaviour
     [SerializeField] public bool CanUseLever;
     [SerializeField] public bool CanMoveHeavy;
 
+    private IEntrance _currentEntrance;
+
     public void UpdateFacing(Direction direction)
     {
         Facing = direction;
+    }
+
+    public void UseEntrance(Direction direction)
+    {
+        if (_currentEntrance != null)
+        {
+            if (direction == Direction.UP)
+            {
+                _currentEntrance.MoveUp(this);
+            }
+            else if (direction == Direction.DOWN)
+            {
+                _currentEntrance.MoveDown(this);
+            }
+        } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<IEntrance>() != null)
+            _currentEntrance = other.gameObject.GetComponent<IEntrance>();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponent<IEntrance>() == _currentEntrance)
+            _currentEntrance = null;
     }
 
     private IEnumerator DoDelayed(UnityAction action)

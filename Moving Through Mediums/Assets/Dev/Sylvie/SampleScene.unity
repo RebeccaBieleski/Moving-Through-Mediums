@@ -1544,6 +1544,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1773179707654373630, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+      propertyPath: UpExit
+      value: 
+      objectReference: {fileID: 4449207937752599789}
+    - target: {fileID: 1773179707654373630, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+      propertyPath: DownExit
+      value: 
+      objectReference: {fileID: 4449207937752599787}
     - target: {fileID: 2038836983926769872, guid: ab97efce8c0536547aab36310bd44406, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -1584,6 +1592,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2489781017884637423, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+      propertyPath: DownExit
+      value: 
+      objectReference: {fileID: 4449207937752599788}
+    - target: {fileID: 3340779908756959035, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+      propertyPath: UpExit
+      value: 
+      objectReference: {fileID: 4449207937752599788}
     - target: {fileID: 4632115195050086411, guid: ab97efce8c0536547aab36310bd44406, type: 3}
       propertyPath: m_Name
       value: Ladder
@@ -1593,6 +1609,39 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+--- !u!114 &4449207937752599787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3340779908756959035, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+  m_PrefabInstance: {fileID: 4449207937752599786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d075b820b14ad704ab535052ea20b802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LadderEntry
+--- !u!114 &4449207937752599788 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1773179707654373630, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+  m_PrefabInstance: {fileID: 4449207937752599786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d075b820b14ad704ab535052ea20b802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LadderEntry
+--- !u!114 &4449207937752599789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2489781017884637423, guid: ab97efce8c0536547aab36310bd44406, type: 3}
+  m_PrefabInstance: {fileID: 4449207937752599786}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d075b820b14ad704ab535052ea20b802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LadderEntry
 --- !u!1001 &5235464022627556556
 PrefabInstance:
   m_ObjectHideFlags: 0

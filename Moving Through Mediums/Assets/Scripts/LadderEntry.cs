@@ -1,9 +1,19 @@
 using UnityEngine;
 
-public class LadderEntry : MonoBehaviour, IInteractable
+public class LadderEntry : MonoBehaviour, IEntrance
 {
-    [SerializeField] LadderEntry NextLadderEntry;
+    [SerializeField] LadderEntry UpExit;
+    [SerializeField] LadderEntry DownExit;
 
-    public void Interact(Character interactingCharacter) =>
-        interactingCharacter.transform.position = NextLadderEntry.transform.position;
+    public void MoveUp(Character character)
+    {
+        if (UpExit != null)
+            character.transform.position = UpExit.transform.position;
+    }
+
+    public void MoveDown(Character character)
+    {
+        if (DownExit != null)
+            character.transform.position = DownExit.transform.position;
+    }
 }
