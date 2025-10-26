@@ -52,6 +52,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2031002771, guid: a85512c9e57155f4abf440b6d193cdcc, type: 3}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 48965ad5-1637-46b5-8519-bfc1a4387977
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Mouse>/rightButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Unpossess Input
+      objectReference: {fileID: 0}
     - target: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Name
       value: ScientistCharacter
