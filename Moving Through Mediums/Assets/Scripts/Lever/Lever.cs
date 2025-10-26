@@ -12,7 +12,7 @@ public class Lever : MonoBehaviour, IInteractable
 
         foreach (var toggleable in ConnectedObjects)
         {
-            toggleable.GetComponent<IToggleable>()?.Toggle();
+            toggleable.transform.gameObject.SetActive(!toggleable.transform.gameObject.activeInHierarchy);
         }
     }
 }
