@@ -35,13 +35,13 @@ public class Character : MonoBehaviour
     {
         if (Feet.CubeUnderFeet != null)
         {
-            transform.parent = Feet.CubeUnderFeet.transform;
+            transform.SetParent(Feet.CubeUnderFeet.transform, true);
         }
     }
 
     public void UnstickFeet()
     {
-        transform.parent = null;
+        transform.SetParent(null, true);
     }
 
     private void OnTriggerEnter(Collider other)
