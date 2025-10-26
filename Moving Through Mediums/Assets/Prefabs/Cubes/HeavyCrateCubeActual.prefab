@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3782733221519763974}
   - component: {fileID: 8312342689814945016}
   m_Layer: 0
-  m_Name: HeavyCrateCube
+  m_Name: HeavyCrateCubeActual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f1d6fbaa9c0607c44a0d31a255ee3aab, type: 3}
       propertyPath: m_Name
-      value: big_box
+      value: small_box
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
