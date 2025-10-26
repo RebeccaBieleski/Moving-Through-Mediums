@@ -144,9 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f16f2ecc2d94e41afc1905c2da7d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickableCube
-  CubeType: 0
+  CubeType: 1
   _isBeingControlled: 0
-  _cubeControlRange: {fileID: 0}
 --- !u!1001 &1722536451499666860
 PrefabInstance:
   m_ObjectHideFlags: 0

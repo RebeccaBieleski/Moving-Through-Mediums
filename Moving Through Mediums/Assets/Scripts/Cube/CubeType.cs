@@ -1,5 +1,5 @@
 public enum CubeType
 {
-    HEAVY,
-    TELEKINETIC
+    REGULAR = 0,
+    HEAVY = 1,
 }

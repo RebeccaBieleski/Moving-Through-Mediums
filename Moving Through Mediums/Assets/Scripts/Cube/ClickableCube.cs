@@ -3,13 +3,20 @@ using UnityEngine.InputSystem;
 
 public class ClickableCube : MonoBehaviour, IClickable
 {
-    [SerializeField] CubeType CubeType = CubeType.HEAVY;
+    [SerializeField] CubeType CubeType = CubeType.REGULAR;
     [SerializeField] bool _isBeingControlled;
-    [SerializeField] Collider _cubeControlRange;
 
     private InputAction _touchInput;
     private Rigidbody _rigidBody;
-    private bool PlayerIsInRange() => _cubeControlRange != null;
+    private Collider _cubeInteractRange;
+    private Collider _cubeTelekinesisRange;
+    private Collider _currentRangeToUse => _cubeTelekinesisRange != null
+        ? _cubeTelekinesisRange 
+            : _cubeInteractRange != null 
+            ? _cubeInteractRange 
+        : null;
+
+    private bool PlayerIsInRange() => _cubeInteractRange != null || _cubeTelekinesisRange != null;
 
     private void Start()
     {
@@ -28,7 +35,7 @@ public class ClickableCube : MonoBehaviour, IClickable
 
             // check if out of bounds
             // theres probably a better way to keep a positon bound within an area
-            var tRangeCollider = _cubeControlRange;
+            var tRangeCollider = _currentRangeToUse;
             var newXPos = transform.localPosition.x;
             var newYPos = transform.localPosition.y;
             if (transform.localPosition.x > tRangeCollider.bounds.size.x / 2)
@@ -57,25 +64,37 @@ public class ClickableCube : MonoBehaviour, IClickable
         {
             _isBeingControlled = !_isBeingControlled;
             _rigidBody.isKinematic = _isBeingControlled;
-            transform.parent = _isBeingControlled ? _cubeControlRange.transform : null;
+            transform.parent = _isBeingControlled ? _currentRangeToUse.transform : null;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<CharacterInteractionRange>() != null && other.gameObject.GetComponentInParent<Character>().CanMoveHeavy)
-            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<CharacterTelekinesisRange>() != null))
+        var otherInteractionRange = other.GetComponent<CharacterInteractionRange>();
+        var otherTelekinesisRange = other.GetComponent<CharacterTelekinesisRange>();
+        var otherCharacter = other.gameObject.GetComponentInParent<Character>();
+
+        if (otherInteractionRange != null && (otherCharacter.CanMoveHeavy || CubeType != CubeType.HEAVY))
         {
-            _cubeControlRange = other;
+            _cubeInteractRange = other;
+        }
+        else if (otherTelekinesisRange != null && CubeType == CubeType.REGULAR)
+        {
+            _cubeTelekinesisRange = other;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if ((CubeType == CubeType.HEAVY && other.gameObject.GetComponent<CharacterInteractionRange>() != null)
-            || (CubeType == CubeType.TELEKINETIC && other.gameObject.GetComponent<CharacterTelekinesisRange>() != null))
+        var otherInteractionRange = other.GetComponent<CharacterInteractionRange>();
+        var otherTelekinesisRange = other.GetComponent<CharacterTelekinesisRange>();
+        if (otherInteractionRange != null)
         {
-            _cubeControlRange = null;
+            _cubeInteractRange = null;
+        }
+        else if (otherTelekinesisRange != null && CubeType == CubeType.REGULAR)
+        {
+            _cubeTelekinesisRange = null;
         }
     }
 }
