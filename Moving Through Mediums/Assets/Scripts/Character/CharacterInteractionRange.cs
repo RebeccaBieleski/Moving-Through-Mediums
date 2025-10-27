@@ -37,7 +37,7 @@ public class CharacterInteractionRange : MonoBehaviour, IInteractionRange
 
     private void Interact()
     {
-        if (_inputAction.WasReleasedThisFrame() && _currentInteractable != null)
+        if (_inputAction.WasReleasedThisFrame() && _currentInteractable != null && _currentCharacter.UnderControl)
         {
             _currentInteractable.GetComponent<IInteractable>().Interact(_currentCharacter);
         }
