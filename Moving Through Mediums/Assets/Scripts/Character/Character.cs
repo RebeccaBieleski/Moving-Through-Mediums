@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     [SerializeField] CharacterFeet Feet;
+    [SerializeField] Rigidbody Rigidbody;
     [SerializeField] public Direction Facing;
     [SerializeField] public bool CanUseLever;
     [SerializeField] public bool CanMoveHeavy;
@@ -33,7 +34,22 @@ public class Character : MonoBehaviour
         } 
     }
 
-    public void StickFeetToBox()
+    public void SetPossessed(bool possessed)
+    {
+        UnderControl = possessed;
+        if (UnderControl)
+        {
+            UnstickFeet();
+            Rigidbody.isKinematic = false;
+        }
+        else
+        {
+            StickFeetToBox();
+            Rigidbody.isKinematic = true;
+        }
+    }
+
+    private void StickFeetToBox()
     {
         if (Feet.CubeUnderFeet != null)
         {
@@ -41,7 +57,7 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void UnstickFeet()
+    private void UnstickFeet()
     {
         transform.SetParent(null, true);
     }

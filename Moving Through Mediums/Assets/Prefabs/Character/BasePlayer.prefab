@@ -521,6 +521,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Feet: {fileID: 41077424597099704}
+  Rigidbody: {fileID: 7250197199674330841}
   Facing: 0
   CanUseLever: 1
   CanMoveHeavy: 1
+  UnderControl: 0
