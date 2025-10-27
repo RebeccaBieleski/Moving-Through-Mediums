@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MediumCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 7245088884232602267, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 192
+      objectReference: {fileID: 0}
     - target: {fileID: 7333486220157719781, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: CanUseLever
       value: 0

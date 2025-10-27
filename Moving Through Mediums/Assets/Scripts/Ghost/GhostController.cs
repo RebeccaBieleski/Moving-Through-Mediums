@@ -16,7 +16,7 @@ public class GhostController : MonoBehaviour
     public bool UnderControl = true;
 
     [SerializeField]
-    private MeshRenderer GhostRenderer;
+    private GameObject GhostRenderer;
 
     [SerializeField]
     private InputAction UnpossessInputAction;
