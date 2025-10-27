@@ -16,17 +16,22 @@ public class GhostInteractionPointer : MonoBehaviour
 
     private void Awake()
 	{
-        PossessInputAction.performed += ctx => {
-                Vector3 coor = Mouse.current.position.ReadValue();
-                foreach (var hit in Physics.RaycastAll(Camera.main.ScreenPointToRay(coor))) {
-                    currentMousedOverCharacter = hit.collider.GetComponent<PlayerController>();
-                    if (currentMousedOverCharacter != null) {
-                    CheckPossessionInput();
-                    break;
-                    }
-                }
-            };
+        PossessInputAction.performed += OnPossessInputAction;
         PossessInputAction.Enable();
+    }
+
+    private void OnPossessInputAction(InputAction.CallbackContext ctx)
+    {
+        Vector3 coor = Mouse.current.position.ReadValue();
+        foreach (var hit in Physics.RaycastAll(Camera.main.ScreenPointToRay(coor)))
+        {
+            currentMousedOverCharacter = hit.collider.GetComponent<PlayerController>();
+            if (currentMousedOverCharacter != null)
+            {
+                CheckPossessionInput();
+                break;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,4 +57,6 @@ public class GhostInteractionPointer : MonoBehaviour
             
         }
     }
+
+    private void OnDestroy() => PossessInputAction.performed -= OnPossessInputAction;
 }
