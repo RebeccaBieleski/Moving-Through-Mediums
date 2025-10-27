@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     [SerializeField] CharacterFeet Feet;
-    [SerializeField] Rigidbody Rigidbody;
+    [SerializeField] public Rigidbody Rigidbody;
     [SerializeField] public Direction Facing;
     [SerializeField] public bool CanUseLever;
     [SerializeField] public bool CanMoveHeavy;

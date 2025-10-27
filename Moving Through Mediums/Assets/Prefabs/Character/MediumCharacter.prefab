@@ -51,11 +51,15 @@ PrefabInstance:
     - target: {fileID: 1775841932315758303, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -356519553, guid: a85512c9e57155f4abf440b6d193cdcc, type: 3}
+      objectReference: {fileID: 1886750766, guid: 846f0eb46992aaf46aa0275c359bb486, type: 3}
     - target: {fileID: 4730407454838447020, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Name
       value: MediumCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6650117398821529363, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 44283a60a08f16c48a66bfa95e32c053, type: 2}
     - target: {fileID: 7245088884232602267, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 192
@@ -82,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9164373649484527663, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

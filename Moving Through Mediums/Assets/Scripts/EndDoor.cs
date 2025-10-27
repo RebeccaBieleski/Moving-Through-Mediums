@@ -47,7 +47,6 @@ public class EndDoor : MonoBehaviour, IClickable
 
     private void EndLevel()
     {
-        Debug.Log("finish");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

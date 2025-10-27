@@ -190,7 +190,6 @@ GameObject:
   - component: {fileID: 7245088884232602267}
   - component: {fileID: 8736368712647001674}
   - component: {fileID: 2216650598967792690}
-  - component: {fileID: 2242967834853328714}
   m_Layer: 6
   m_Name: Ghost
   m_TagString: Untagged
@@ -313,38 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b649b74277b269840875bd25d1794cd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ghost
---- !u!114 &2242967834853328714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4730407454838447020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c460f9451ed9a254a82e1bae313ac27e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GhostInteractionPointer
-  GhostCharacter: {fileID: 8736368712647001674}
-  currentMousedOverCharacter: {fileID: 0}
-  possessionDistance: 5
-  PossessInputAction:
-    m_Name: Possess Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6aa2ed8c-a324-4b13-b712-ec8cbb250339
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 0bf8cbc1-35e6-4b33-999c-c8e3e6e6d1d1
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Possess Input
-      m_Flags: 0
-    m_Flags: 0
+  Facing: 0
+  _spriteRenderer: {fileID: 8012852639344777390}
 --- !u!1 &6205867673475606109
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +547,7 @@ GameObject:
   - component: {fileID: 1216477809399435708}
   - component: {fileID: 5131792886851761179}
   - component: {fileID: 8012852639344777390}
+  - component: {fileID: 18858930468590426}
   m_Layer: 7
   m_Name: CharacterArt
   m_TagString: Untagged
@@ -685,3 +655,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &18858930468590426
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127807005471386518}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 72c96c7f219326f42a0d74c8f1b2050b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

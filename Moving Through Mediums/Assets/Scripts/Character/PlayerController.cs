@@ -37,9 +37,11 @@ public class PlayerController : MonoBehaviour
         _character = GetComponent<Character>();
         _childInteractionRanges = GetComponentsInChildren<IInteractionRange>().ToList();
 
-        UnpossessInputAction.performed += ctx => Possess();
+        UnpossessInputAction.performed += OnUnpossessInputAction;
         UnpossessInputAction.Disable();
     }
+
+    private void OnUnpossessInputAction(InputAction.CallbackContext ctx) => Possess();
 
     private void Update()
     {
@@ -115,4 +117,6 @@ public class PlayerController : MonoBehaviour
                 r.SetColliderActive(false);
         }
     }
+
+    private void OnDestroy() => UnpossessInputAction.performed -= OnUnpossessInputAction;
 }
