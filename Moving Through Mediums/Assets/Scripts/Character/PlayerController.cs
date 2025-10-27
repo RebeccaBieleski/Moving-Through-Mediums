@@ -101,18 +101,16 @@ public class PlayerController : MonoBehaviour
     public void Possess()
 	{
         UnderControl = !UnderControl;
-        _character.UnderControl = UnderControl;
+        _character.SetPossessed(UnderControl);
         if (UnderControl) 
         {
             UnpossessInputAction.Enable();
-            _character.UnstickFeet();
             foreach (var r in _childInteractionRanges)
                 r.SetColliderActive(true);
         } 
         else 
         {
             UnpossessInputAction.Disable();
-            _character.StickFeetToBox();
             foreach (var r in _childInteractionRanges)
                 r.SetColliderActive(false);
         }
