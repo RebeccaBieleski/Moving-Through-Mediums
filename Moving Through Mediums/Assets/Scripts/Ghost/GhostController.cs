@@ -24,6 +24,9 @@ public class GhostController : MonoBehaviour
     [SerializeField]
     private CapsuleCollider Collider;
 
+    [SerializeField] private AudioSource PossessSfx;
+    [SerializeField] private AudioSource UnpossessSfx;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -77,6 +80,7 @@ public class GhostController : MonoBehaviour
             UnpossessInputAction.Enable();
             Collider.enabled = false;
             _rigidBody.isKinematic = true;
+            PossessSfx.Play();
         } else {
             //Reappear Ghost
             GhostRenderer.transform.gameObject.SetActive(true);
@@ -84,6 +88,7 @@ public class GhostController : MonoBehaviour
             UnpossessInputAction.Disable();
             Collider.enabled = true;
             _rigidBody.isKinematic = false;
+            UnpossessSfx.Play();
         }
     }
 

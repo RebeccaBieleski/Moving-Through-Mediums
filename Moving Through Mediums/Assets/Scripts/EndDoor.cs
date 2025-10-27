@@ -9,6 +9,8 @@ public class EndDoor : MonoBehaviour, IClickable
 
     private Character _currentCharacterAtDoor;
 
+    [SerializeField] private AudioSource DoorSfx;
+
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponentInChildren<GhostController>();
@@ -37,6 +39,8 @@ public class EndDoor : MonoBehaviour, IClickable
             _currentCharacterAtDoor.transform.position = new Vector3(0, 0, 100);
             _currentCharacterAtDoor = null;
             _numberOfCharactersEntered++;
+
+            DoorSfx.Play();
 
             if (_numberOfCharactersEntered >= NumberOfCharactersRequired)
             {

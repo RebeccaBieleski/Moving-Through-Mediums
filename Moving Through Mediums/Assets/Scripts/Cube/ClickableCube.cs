@@ -19,6 +19,9 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private bool PlayerIsInRange() => _cubeInteractRange != null || _cubeTelekinesisRange != null;
 
+    [SerializeField]
+    private AudioSource m_BoxCollide;
+
     private void Start()
     {
         _touchInput = InputSystem.actions.FindAction("Touch");
@@ -62,7 +65,15 @@ public class ClickableCube : MonoBehaviour, IClickable
         }
     }
 
-    public void OnClick()
+	public void OnCollisionEnter(Collision collision)
+	{
+		if (collision != null && collision.gameObject.layer != LayerMask.NameToLayer("CharacterLayer") && !m_BoxCollide.isPlaying) {
+            m_BoxCollide.Play();
+
+        }
+	}
+
+	public void OnClick()
     {
         if (PlayerIsInRange())
         {
