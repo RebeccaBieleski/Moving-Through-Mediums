@@ -51,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 1775841932315758303, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2031002771, guid: a85512c9e57155f4abf440b6d193cdcc, type: 3}
+      objectReference: {fileID: 481668938, guid: 846f0eb46992aaf46aa0275c359bb486, type: 3}
     - target: {fileID: 3799059988328517798, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: UnpossessInputAction.m_SingletonActionBindings.Array.size
       value: 1
@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScientistCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 6650117398821529363, guid: 3da12409299d73749871523c5f0032f2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e3ed30ac36408494cbde33c577c7f00c, type: 2}
     - target: {fileID: 7333486220157719781, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: CanMoveHeavy
       value: 0
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9164373649484527663, guid: 3da12409299d73749871523c5f0032f2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

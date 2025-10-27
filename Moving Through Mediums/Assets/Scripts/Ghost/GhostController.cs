@@ -64,7 +64,7 @@ public class GhostController : MonoBehaviour
         if (xMovementCommand == 0)
             return;
 
-       
+        _character.UpdateFacing(xMovementCommand < 0 ? Direction.LEFT : Direction.RIGHT);
     }
 
     public void Possess (PlayerController character)
