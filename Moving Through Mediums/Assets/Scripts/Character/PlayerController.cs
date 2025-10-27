@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
     public void Possess()
 	{
         UnderControl = !UnderControl;
+        _character.UnderControl = UnderControl;
         if (UnderControl) 
         {
             UnpossessInputAction.Enable();

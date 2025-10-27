@@ -15,6 +15,7 @@ public class ClickableCube : MonoBehaviour, IClickable
             : _cubeInteractRange != null 
             ? _cubeInteractRange 
         : null;
+    private Character _controlledBy;
 
     private bool PlayerIsInRange() => _cubeInteractRange != null || _cubeTelekinesisRange != null;
 
@@ -26,6 +27,9 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private void Update()
     {
+        if (_controlledBy == null || !_controlledBy.UnderControl)
+            return;
+
         if (_isBeingControlled)
         {
             var pointerPos = _touchInput.ReadValue<Vector2>();
@@ -62,9 +66,14 @@ public class ClickableCube : MonoBehaviour, IClickable
     {
         if (PlayerIsInRange())
         {
+            var characterTryingToTakeBox = _currentRangeToUse.gameObject.GetComponentInParent<Character>();
+            if (!characterTryingToTakeBox.UnderControl || _controlledBy != null && _controlledBy != characterTryingToTakeBox)
+                return;
+
             _isBeingControlled = !_isBeingControlled;
             _rigidBody.isKinematic = _isBeingControlled;
             transform.parent = _isBeingControlled ? _currentRangeToUse.transform : null;
+            _controlledBy = _isBeingControlled ? characterTryingToTakeBox : null;
         }
     }
 

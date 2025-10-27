@@ -5,10 +5,11 @@ using UnityEngine.Events;
 public class Character : MonoBehaviour
 {
     [SerializeField] CharacterFeet Feet;
-
     [SerializeField] public Direction Facing;
     [SerializeField] public bool CanUseLever;
     [SerializeField] public bool CanMoveHeavy;
+
+    public bool UnderControl = false;
 
     private IEntrance _currentEntrance;
 
