@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75606b52a3eaaf47a462d246a61a965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  MoveSpeed: 60
+  MoveSpeed: 35
   JumpForce: 14
   HorizontalDragFactor: 0.9
   GhostPrefab: {fileID: 0}
