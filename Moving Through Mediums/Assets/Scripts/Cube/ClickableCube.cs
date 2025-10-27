@@ -95,6 +95,9 @@ public class ClickableCube : MonoBehaviour, IClickable
 
     private void OnTriggerExit(Collider other)
     {
+        if (_controlledBy != null && other.gameObject.GetComponentInParent<Character>() != _controlledBy)
+            return;
+
         var otherInteractionRange = other.GetComponent<CharacterInteractionRange>();
         var otherTelekinesisRange = other.GetComponent<CharacterTelekinesisRange>();
         if (otherInteractionRange != null)
