@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
             }
         } 
     }
+
     public void StickFeetToBox()
     {
         if (Feet.CubeUnderFeet != null)
@@ -43,6 +44,8 @@ public class Character : MonoBehaviour
     {
         transform.SetParent(null, true);
     }
+
+    public bool IsGrounded() => Feet.Grounded;
 
     private void OnTriggerEnter(Collider other)
     {

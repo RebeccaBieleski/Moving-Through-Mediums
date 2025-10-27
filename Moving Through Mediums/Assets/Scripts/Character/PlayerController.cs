@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        if (_jumpInput.triggered)
+        if (_jumpInput.triggered && _character.IsGrounded())
         {
             _rigidBody.AddForce(new Vector2(0, JumpForce), ForceMode.Impulse);
         }
